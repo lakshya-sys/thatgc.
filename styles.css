@@ -1,60 +1,88 @@
 /* General Styles */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #141414;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #141414, #1c1c1c);
     color: white;
+    overflow-x: hidden;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: #e50914;
+    background: linear-gradient(90deg, #ff6f61, #e50914);
     color: white;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
 header h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin: 0;
 }
 
 header p {
     font-size: 1.2rem;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 main {
     padding: 20px;
+    animation: fadeIn 2s ease-in-out;
 }
 
 .genres {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
 }
 
 .genre-card {
-    background-color: #222;
-    padding: 15px;
+    background: linear-gradient(135deg, #222, #444);
+    padding: 20px;
     text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s;
-    font-size: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
     color: white;
+    transition: transform 0.4s, background-color 0.4s, box-shadow 0.4s;
+    animation: slideIn 0.8s ease-in-out;
+    position: relative;
 }
 
 .genre-card:hover {
-    transform: scale(1.05);
-    background-color: #e50914;
+    transform: translateY(-10px) scale(1.05);
+    background: linear-gradient(135deg, #ff6f61, #e50914);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #000;
+    background: #000;
     color: #bbb;
     font-size: 0.9rem;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 /* Responsive Design for Phones */
@@ -64,7 +92,7 @@ footer {
     }
 
     header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     header p {
@@ -80,8 +108,8 @@ footer {
     }
 
     .genre-card {
-        font-size: 0.9rem;
-        padding: 10px;
+        font-size: 1rem;
+        padding: 15px;
     }
     
     footer {
